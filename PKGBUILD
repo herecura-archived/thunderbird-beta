@@ -2,10 +2,10 @@
 # Based on [extra]'s thunderbird: https://git.archlinux.org/svntogit/packages.git/tree/trunk?h=packages/thunderbird
 
 pkgname=thunderbird-beta
-pkgver=58.0b3
+pkgver=59.0b1
 _major=${pkgver/[br]*}
 _build=${pkgver/*rc}
-pkgrel=2
+pkgrel=1
 pkgdesc="Standalone mail and news reader from mozilla.org - Bleeding edge version"
 arch=('x86_64')
 license=('MPL' 'GPL' 'LGPL')
@@ -25,9 +25,9 @@ source=(
     'thunderbird-install-dir.patch'
     'no-crmf.diff'
 )
-sha512sums=('e7071e220dcd1b43c6294b04f81e7ac7e94c651158342e64a2e070af8fb8f4a4da5e5c06b963b133ca37b3ad885113c4efee03a963d1bc029e49cbbbe699b03c'
+sha512sums=('384d78346413c66b02573a6138bde223b6388a306ba535eaf5498867a4dd7bb44b73dda4e7811b728202df0283813bc3365317007a170696bdba0703beb83215'
             'e5649ddee3ca9cfdcf56652e9c8e6160d52c69d1439f9135b0c0d436ce61a25f17758afc0dd6cac3434c26234c584828eb07fdf9604797f7dd3f617ec194b79a'
-            '8100fd3ea37d998905498d41c8504bfdd6d86766542d6b93107c92382a7525da7f75a83f8ff1e15ad95039d51da2add7e6b18af76d45516a41cdfd1e9f98f262'
+            '08f14d57db962d4c5060daf6ff3413bf7e2b1d79c60ea522235acbd3ccdfa1955e75fb9d0520aaca8a96fb33cb5093e13b09f51aa116dec999dee34224df9f8b'
             '951667941520e66e7b6aad55619ec2b38364da58c5cf8a71775a3032921cfc0a8e5c7ba14e0df35588175f94a6b4785566d39177ff536ab9cefcbd19a03dc065')
 # RC
 if [[ $_build = ? ]]; then
@@ -167,7 +167,7 @@ END
 
   # Icons
   for i in 16 22 24 32 48 256; do
-    install -Dm644 other-licenses/branding/thunderbird/mailicon$i.png \
+    install -Dm644 other-licenses/branding/thunderbird/default$i.png \
       "$pkgdir/usr/share/icons/hicolor/${i}x${i}/apps/$pkgname.png"
   done
 
